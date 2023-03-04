@@ -1,0 +1,31 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:PutItem",
+                "dynamodb:DeleteItem",
+                "dynamodb:GetItem",
+                "dynamodb:Scan",
+                "dynamodb:Query",
+                "dynamodb:UpdateItem",
+                "logs:CreateLogGroup"
+            ],
+            "Resource": [
+                "arn:aws:dynamodb:<region>:<accountId>:table/<tableName>",
+                "arn:aws:logs:<region>:<accountId>:*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:<region>:<accountId>:log-group:/aws/lambda/<tableName>:*"
+        }
+    ]
+}
