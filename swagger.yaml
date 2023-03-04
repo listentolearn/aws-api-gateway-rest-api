@@ -5,7 +5,7 @@ info:
   description: basic CRUD API
   version: "1"
 
-basePath: /api/v1
+basePath: /
 
 
 parameters:
